@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <CustomCursor />
-        <div className="min-h-screen bg-black text-white">
+        <div className="min-h-screen">
           <Navbar />
           <main className="pt-16">{children}</main>
           <Footer />

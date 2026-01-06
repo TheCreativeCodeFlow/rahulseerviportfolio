@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Big Data Analytics Specialist",
+        "issuer": "Coursera / IBM",
+        "date": "2024",
+        "imageUrl": "/images/cert-placeholder.svg",
+        "credentialUrl": "https://coursera.org",
+        "category": "Data Science"
+    },
+    {
+        "id": 2,
+        "title": "Advanced React Patterns",
+        "issuer": "Frontend Masters",
+        "date": "2023",
+        "imageUrl": "/images/cert-placeholder.svg",
+        "credentialUrl": "https://frontendmasters.com",
+        "category": "Web Development"
+    },
+    {
+        "id": 3,
+        "title": "Java Programming Masterclass",
+        "issuer": "Udemy",
+        "date": "2023",
+        "imageUrl": "/images/cert-placeholder.svg",
+        "credentialUrl": "https://udemy.com",
+        "category": "Programming"
+    },
+    {
+        "id": 4,
+        "title": "AWS Certified Cloud Practitioner",
+        "issuer": "Amazon Web Services",
+        "date": "2024",
+        "imageUrl": "/images/cert-placeholder.svg",
+        "credentialUrl": "https://aws.amazon.com",
+        "category": "Cloud"
+    }
+]

@@ -43,13 +43,13 @@ const Skills = () => {
   ]
 
   return (
-    <section id="skills" className="section-padding">
-      <div className="container-custom">
+    <section id="skills" className="section-padding bg-black/50 relative">
+      <div className="container-custom relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="gradient-text">Skills</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+            <span className="text-primary mr-2">/</span>My <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-glow">Skills</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             A comprehensive overview of my technical expertise and the technologies I work with.
           </p>
         </div>
@@ -58,37 +58,40 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="group p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
+              className="group p-6 rounded-sm bg-card/20 border border-white/5 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:transform hover:-translate-y-1 relative overflow-hidden"
             >
               {/* Header */}
-              <div className="flex items-center mb-6">
-                <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} text-white mr-4`}>
+              <div className="flex items-center mb-6 relative z-10">
+                <div className={`p-3 rounded-sm bg-gradient-to-r from-primary/20 to-secondary/20 text-primary border border-primary/30 mr-4 shadow-[0_0_15px_rgba(0,243,255,0.2)]`}>
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">{category.title}</h3>
+                <h3 className="text-xl font-bold text-white font-mono tracking-wide">{category.title}</h3>
               </div>
 
               {/* Skills */}
-              <div className="space-y-3">
+              <div className="space-y-3 relative z-10">
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skillIndex}
-                    className="flex items-center justify-between p-3 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
+                    className="flex items-center justify-between p-3 rounded-sm bg-black/40 border border-white/5 hover:border-primary/30 transition-colors duration-200"
                   >
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
-                    <div className="w-2 h-2 rounded-full bg-primary-orange"></div>
+                    <span className="text-gray-300 font-medium font-mono text-sm">{skill}</span>
+                    <div className="w-1.5 h-3 bg-primary/50 group-hover:bg-primary group-hover:shadow-[0_0_8px_#00f3ff] transition-all"></div>
                   </div>
                 ))}
               </div>
+
+              {/* Hover Effect Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           ))}
         </div>
 
         {/* Additional Info */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-primary-orange to-primary-blue text-white font-medium">
+          <div className="inline-flex items-center px-6 py-3 rounded-sm border border-primary/30 bg-primary/10 text-primary font-medium font-mono tracking-wider animate-pulse-fast">
             <Terminal className="w-5 h-5 mr-2" />
-            Always learning and exploring new technologies
+            ALWAYS_INITIALIZING_NEW_PROTOCOLS...
           </div>
         </div>
       </div>

@@ -1,0 +1,31 @@
+{
+    "title": "About Me",
+    "description": "Get to know more about my journey, passion, and what drives me in the world of technology.",
+    "bio": [
+        "Hello! I'm Rahul Seervi, a passionate B.Tech Computer Science Engineering student specializing in Big Data Analytics. My journey in technology began with a curiosity about how data can transform decision-making and create meaningful impact.",
+        "I have hands-on experience in developing applications using Java, React, and various database technologies. My projects range from interactive games like UNO to sophisticated systems like Traffic Video Analysis System using Next.js and Canvas API.",
+        "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or diving deep into the latest trends in big data and analytics."
+    ],
+    "highlights": [
+        {
+            "icon": "GraduationCap",
+            "title": "Education",
+            "description": "B.Tech in Computer Science Engineering with specialization in Big Data Analytics"
+        },
+        {
+            "icon": "Code",
+            "title": "Development",
+            "description": "Full-stack development with Java, React, and modern web technologies"
+        },
+        {
+            "icon": "Database",
+            "title": "Data Analytics",
+            "description": "Passionate about extracting insights from complex datasets"
+        },
+        {
+            "icon": "Brain",
+            "title": "Problem Solving",
+            "description": "Love tackling challenging problems with innovative solutions"
+        }
+    ]
+}

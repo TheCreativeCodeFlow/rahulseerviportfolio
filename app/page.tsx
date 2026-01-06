@@ -15,7 +15,9 @@ import {
   Database,
   Smartphone,
 } from "lucide-react"
-import LoadingScreen from "@/components/LoadingScreens"
+
+import Hero from "@/components/Hero"
+import TechLoadingScreen from "@/components/TechLoadingScreen"
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -40,8 +42,8 @@ export default function Home() {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a")
-    link.href = "/resume.pdf"
-    link.download = "Rahul_Seervi_Resume.pdf"
+    link.href = "/Rahul-Seervi.pdf"
+    link.download = "Rahul-Seervi.pdf"
     link.click()
   }
 
@@ -71,139 +73,53 @@ export default function Home() {
   ]
 
   if (loading) {
-    return <LoadingScreen onComplete={() => setLoading(false)} type="home" />
+    return <TechLoadingScreen onComplete={() => setLoading(false)} />
   }
 
   return (
-    <div className="min-h-screen bg-black text-white page-transition">
+    <div className="min-h-screen page-transition">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        {/* Background Animation */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-primary-orange/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-blue/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
+      <Hero />
 
-        <div className="container-custom section-padding text-center">
-          <div className="animate-fade-in">
-            {/* Profile Image */}
-            <div className="mb-8">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-gradient-to-r from-primary-orange to-primary-blue p-1">
-                <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-                  <Image src="/images/rs-logo-simple.svg" alt="RS Logo" width={60} height={60} className="object-contain" />
-                </div>
+      {/* Quick Stats */}
+      <section className="py-12 bg-black/40 border-b border-primary/10 relative z-10">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto px-4">
+            {quickStats.map((stat, index) => (
+              <div key={index} className="text-center p-6 rounded-sm bg-card/20 border border-white/5 backdrop-blur-sm group hover:border-primary/50 transition-colors">
+                <div className="text-primary mb-3 flex justify-center group-hover:text-glow transition-all scale-110">{stat.icon}</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1 font-mono">{stat.value}</div>
+                <div className="text-xs text-gray-400 uppercase tracking-widest font-semibold">{stat.label}</div>
               </div>
-            </div>
-
-            {/* Main Content */}
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6">
-              Hi, I'm <span className="gradient-text">Rahul Seervi</span>
-            </h1>
-
-            <div className="h-12 sm:h-16 mb-8">
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-400">
-                {text}
-                <span className="animate-pulse">|</span>
-              </p>
-            </div>
-
-            <p className="text-base sm:text-lg text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
-              Passionate about creating innovative solutions with Java, React, and modern web technologies. Currently
-              exploring the fascinating world of Big Data Analytics.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12 px-4">
-              <button onClick={handleDownloadResume} className="btn-primary flex items-center justify-center gap-2">
-                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                Download Resume
-              </button>
-              <Link href="/projects" className="btn-secondary flex items-center justify-center gap-2">
-                View Projects
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-              </Link>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-12">
-              <a
-                href="https://github.com/TheCreativeCodeFlow"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-800 hover:bg-primary-orange hover:text-white transition-all duration-300 hover:scale-110"
-                title="GitHub Profile"
-              >
-                <Github className="w-5 h-5 sm:w-6 sm:h-6" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/rahul-seervi-a14440289/?originalSubdomain=in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-800 hover:bg-primary-blue hover:text-white transition-all duration-300 hover:scale-110"
-                title="LinkedIn Profile"
-              >
-                <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
-              </a>
-              <button
-                onClick={handleEmailClick}
-                className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${
-                  emailCopied ? "bg-green-600 text-white" : "bg-gray-800 hover:bg-primary-orange hover:text-white"
-                }`}
-                title={emailCopied ? "Email copied!" : "Contact via Email"}
-              >
-                {emailCopied ? (
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
-                ) : (
-                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
-                )}
-              </button>
-            </div>
-
-            {/* Email Display */}
-            {emailCopied && (
-              <div className="mb-8 animate-in fade-in-0 duration-500">
-                <div className="inline-flex items-center px-4 py-2 bg-green-900/30 border border-green-500/30 rounded-lg text-green-400">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  <span className="text-sm">Email copied: seervirahul2004@gmail.com</span>
-                </div>
-              </div>
-            )}
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto px-4">
-              {quickStats.map((stat, index) => (
-                <div key={index} className="text-center p-4 rounded-lg bg-gray-900/50 backdrop-blur-sm">
-                  <div className="text-primary-orange mb-2 flex justify-center">{stat.icon}</div>
-                  <div className="text-xl sm:text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Quick Navigation */}
-      <section className="section-padding bg-gray-900/30">
+      <section className="section-padding relative">
         <div className="container-custom">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Explore My Work</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 tracking-wider">
+            <span className="text-primary mr-2">/</span>EXPLORE_WORK
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { title: "About Me", href: "/about", description: "Learn about my journey" },
               { title: "Skills", href: "/skills", description: "Technical expertise" },
               { title: "Projects", href: "/projects", description: "Featured work" },
-              { title: "Contact", href: "/contact", description: "Get in touch" },
+              { title: "Certificates", href: "/certificates", description: "Verified Credentials" },
             ].map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
-                className="group p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all duration-300 card-hover"
+                className="group p-6 rounded-sm bg-card/40 border border-white/5 hover:border-primary/50 transition-all duration-300 relative overflow-hidden"
               >
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 group-hover:text-primary-orange transition-colors duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 group-hover:text-primary group-hover:text-glow transition-colors duration-300 relative z-10 font-mono uppercase">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-sm">{item.description}</p>
-                <ArrowRight className="w-5 h-5 text-primary-orange mt-4 group-hover:translate-x-2 transition-transform duration-300" />
+                <p className="text-gray-400 text-sm relative z-10">{item.description}</p>
+                <ArrowRight className="w-5 h-5 text-primary mt-4 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
               </Link>
             ))}
           </div>
@@ -221,7 +137,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {/* Direct Email */}
             <div className="p-4 bg-gray-900 rounded-lg text-center">
-              <Mail className="w-8 h-8 text-primary-orange mx-auto mb-2" />
+              <Mail className="w-8 h-8 text-primary mx-auto mb-2" />
               <h3 className="font-semibold text-white mb-2">Direct Email</h3>
               <p className="text-xs text-gray-400 mb-3">seervirahul2004@gmail.com</p>
               <button onClick={handleEmailClick} className="w-full btn-primary text-sm py-2">

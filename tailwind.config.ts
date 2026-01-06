@@ -9,6 +9,13 @@ const config: Config = {
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -19,14 +26,12 @@ const config: Config = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          orange: "#ff6500",
-          blue: "#1e3e62",
-          "dark-blue": "#0b192c",
-          black: "#000000",
+          cyan: "#00f3ff",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          purple: "#bc13fe",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -39,6 +44,7 @@ const config: Config = {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          green: "#0aff00",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -48,6 +54,10 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        tech: {
+          black: "#050505",
+          gray: "#1a1a2e",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -58,6 +68,8 @@ const config: Config = {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.6s ease-out",
         "bounce-slow": "bounce 2s infinite",
+        "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "scan-line": "scanline 2s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -68,6 +80,10 @@ const config: Config = {
           "0%": { transform: "translateY(20px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
+        scanline: {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100%)" },
+        }
       },
     },
   },

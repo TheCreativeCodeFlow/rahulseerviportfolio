@@ -1,0 +1,78 @@
+[
+    {
+        "title": "UNO Game",
+        "description": "A fully functional UNO card game built with Java, featuring multiplayer support, game logic implementation, and an intuitive user interface.",
+        "image": "/images/uno-game-thumbnail.png",
+        "technologies": [
+            "Java",
+            "Swing",
+            "OOP",
+            "Game Logic"
+        ],
+        "liveDemo": "https://uno-game-app-3w67.vercel.app/",
+        "sourceCode": "https://github.com/TheCreativeCodeFlow/Uno-Game-App",
+        "featured": true,
+        "date": "2024"
+    },
+    {
+        "title": "Mentor's Mark - NGO Platform",
+        "description": "A comprehensive NGO platform designed to connect mentors with students, facilitating educational guidance and career development. Features user registration, mentor-student matching, resource sharing, and progress tracking to empower underprivileged communities through quality mentorship.",
+        "image": "/images/mentors-mark-thumbnail.png",
+        "technologies": [
+            "React",
+            "Next.js",
+            "Node.js",
+            "MongoDB",
+            "Tailwind CSS"
+        ],
+        "liveDemo": "https://mentor-s-mark-qvn3.vercel.app/",
+        "sourceCode": "https://github.com/TheCreativeCodeFlow/Mentor-s-Mark",
+        "featured": true,
+        "date": "2024"
+    },
+    {
+        "title": "Traffic Video Analysis System",
+        "description": "A sophisticated web application for analyzing traffic patterns using video processing, built with Next.js and Canvas API for real-time visualization.",
+        "image": "/placeholder.svg?height=300&width=400",
+        "technologies": [
+            "Next.js",
+            "Canvas API",
+            "Video Processing",
+            "React"
+        ],
+        "liveDemo": "#",
+        "sourceCode": "#",
+        "featured": true,
+        "date": "2024"
+    },
+    {
+        "title": "University Management System",
+        "description": "A comprehensive web application for managing university operations including student enrollment, course management, and administrative tasks.",
+        "image": "/placeholder.svg?height=300&width=400",
+        "technologies": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Express"
+        ],
+        "liveDemo": "#",
+        "sourceCode": "#",
+        "featured": false,
+        "date": "2023"
+    },
+    {
+        "title": "Data Analytics Dashboard",
+        "description": "An interactive dashboard for visualizing complex datasets with charts, graphs, and real-time data processing capabilities.",
+        "image": "/placeholder.svg?height=300&width=400",
+        "technologies": [
+            "React",
+            "D3.js",
+            "Python",
+            "Data Visualization"
+        ],
+        "liveDemo": "#",
+        "sourceCode": "#",
+        "featured": false,
+        "date": "2023"
+    }
+]

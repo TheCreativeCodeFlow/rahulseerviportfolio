@@ -1,0 +1,71 @@
+[
+    {
+        "title": "Frontend",
+        "icon": "Globe",
+        "color": "from-primary-orange to-red-500",
+        "skills": [
+            "React",
+            "Next.js",
+            "JavaScript",
+            "TypeScript",
+            "HTML5",
+            "CSS3",
+            "Tailwind CSS"
+        ]
+    },
+    {
+        "title": "Backend",
+        "icon": "Code",
+        "color": "from-primary-blue to-blue-600",
+        "skills": [
+            "Java",
+            "Node.js",
+            "REST APIs",
+            "Express.js"
+        ]
+    },
+    {
+        "title": "Database",
+        "icon": "Database",
+        "color": "from-green-500 to-emerald-600",
+        "skills": [
+            "MongoDB",
+            "MySQL",
+            "SQL",
+            "Database Design"
+        ]
+    },
+    {
+        "title": "Mobile",
+        "icon": "Smartphone",
+        "color": "from-purple-500 to-violet-600",
+        "skills": [
+            "Kotlin",
+            "Android Development"
+        ]
+    },
+    {
+        "title": "Tools & Technologies",
+        "icon": "Wrench",
+        "color": "from-orange-500 to-yellow-500",
+        "skills": [
+            "Git",
+            "GitHub",
+            "VSCode",
+            "IntelliJ IDEA",
+            "Canvas API",
+            "JSON"
+        ]
+    },
+    {
+        "title": "Specialization",
+        "icon": "Terminal",
+        "color": "from-primary-dark-blue to-gray-800",
+        "skills": [
+            "Big Data Analytics",
+            "Data Processing",
+            "Algorithm Design",
+            "Problem Solving"
+        ]
+    }
+]

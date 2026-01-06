@@ -1,0 +1,19 @@
+{
+    "email": "seervirahul2004@gmail.com",
+    "phone": "+91 8583024122",
+    "location": "India",
+    "socialLinks": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/TheCreativeCodeFlow"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://linkedin.com/in/rahul-seervi"
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/rahulseervi"
+        }
+    ]
+}

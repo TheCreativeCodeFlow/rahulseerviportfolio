@@ -8,7 +8,8 @@ export async function POST(request: Request) {
     // Simple hardcoded password for demo purposes
     // In a real app, use environment variables
     if (password === 'admin123') {
-        cookies().set('admin_session', 'true', {
+        const cookieStore = await cookies();
+        cookieStore.set('admin_session', 'true', {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
             maxAge: 60 * 60 * 24 * 7, // 1 week

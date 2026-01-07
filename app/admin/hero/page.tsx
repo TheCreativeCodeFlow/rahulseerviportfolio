@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { Save, Loader2 } from "lucide-react"
+import type { HeroData } from "@/types"
 
 export default function HeroEditor() {
-    const [data, setData] = useState<any>(null)
+    const [data, setData] = useState<HeroData | null>(null)
     const [loading, setLoading] = useState(true)
     const [saving, setSaving] = useState(false)
     const [message, setMessage] = useState("")

@@ -66,20 +66,20 @@ export async function POST(request: NextRequest) {
         keyValid: true,
         timestamp: new Date().toISOString(),
       })
-    } catch (resendError: any) {
+    } catch (resendError: unknown) {
       console.error("💥 Resend service error:", resendError)
       return NextResponse.json({
         testStatus: "❌ FAILED",
         error: "Resend service error",
-        details: resendError.message,
+        details: resendError instanceof Error ? resendError.message : String(resendError),
         timestamp: new Date().toISOString(),
       })
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json(
       {
         testStatus: "💥 ERROR",
-        error: error.message,
+        error: error instanceof Error ? error.message : String(error),
         timestamp: new Date().toISOString(),
       },
       { status: 500 },

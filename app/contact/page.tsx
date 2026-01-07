@@ -138,13 +138,15 @@ export default function Contact() {
         setSubmitStatus("idle")
         setSuccessMessage("")
       }, 15000)
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("❌ EmailJS error:", error)
 
+      const errorMessage = error instanceof Error
+        ? error.message
+        : (error as { text?: string })?.text || "Failed to send message. Please try contacting me directly via email."
+
       setSubmitStatus("error")
-      setErrorMessage(
-        error.text || error.message || "Failed to send message. Please try contacting me directly via email.",
-      )
+      setErrorMessage(errorMessage)
 
       // Auto-hide error message after 10 seconds
       setTimeout(() => {
@@ -249,11 +251,10 @@ export default function Contact() {
                     {info.copyable && (
                       <button
                         onClick={copyEmail}
-                        className={`p-2 rounded-lg transition-all duration-300 ${
-                          emailCopied
+                        className={`p-2 rounded-lg transition-all duration-300 ${emailCopied
                             ? "bg-green-600 text-white"
                             : "bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white"
-                        }`}
+                          }`}
                         title={emailCopied ? "Copied!" : "Copy email"}
                       >
                         {emailCopied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}

@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react"
 import { Download, ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import type { HeroData } from "@/types"
 
 const Hero = () => {
-  const [heroData, setHeroData] = useState<any>(null)
+  const [heroData, setHeroData] = useState<HeroData | null>(null)
   const [text, setText] = useState("")
+
 
   // Fetch data on mount
   useEffect(() => {

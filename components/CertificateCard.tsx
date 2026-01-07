@@ -22,8 +22,9 @@ const CertificateCard = ({ title, issuer, date, imageUrl, credentialUrl }: Certi
                     <Image
                         src={imageUrl}
                         alt={title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        style={{ objectFit: 'cover' }}
                         className="transition-transform duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
                     />
                 ) : (

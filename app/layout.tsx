@@ -34,13 +34,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning style={{ margin: 0, padding: 0, overflow: 'hidden' }}>
         <CustomCursor />
-        <div className="min-h-screen">
-          <Navbar />
-          <main className="pt-16">{children}</main>
-          <Footer />
-        </div>
+        <main>{children}</main>
       </body>
     </html>
   )
